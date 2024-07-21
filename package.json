@@ -1,5 +1,5 @@
 {
-  "name": "telegraf-sqlite-template",
+  "name": "snake-sqlite-template",
   "version": "0.1.1",
   "description": "Template for creating future telegram bot apps",
   "main": "dist/index.js",
@@ -14,28 +14,25 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/francisyzy/telegraf-sqlite-template.git"
+    "url": "git+https://github.com/francisyzy/snake-sqlite-template.git"
   },
   "author": "francisyzy",
   "bugs": {
-    "url": "https://github.com/francisyzy/telegraf-sqlite-template/issues"
+    "url": "https://github.com/francisyzy/snake-sqlite-template/issues"
   },
-  "homepage": "https://github.com/francisyzy/telegraf-sqlite-template#readme",
+  "homepage": "https://github.com/francisyzy/snake-sqlite-template#readme",
   "engines": {
     "node": "18.x"
   },
   "dependencies": {
     "@prisma/client": "^4.14.0",
-    "dotenv": "^16.0.3",
-    "telegraf": "^4.12.2"
+    "tgsnake": "^3.3.1"
   },
   "devDependencies": {
     "@types/node": "^18",
-    "@types/qrcode-terminal": "^0.12.0",
     "nodemon": "^2.0.22",
     "prettier": "^2.8.8",
     "prisma": "^4.14.0",
-    "qrcode-terminal": "^0.12.0",
     "ts-node": "^10.9.1",
     "typegram": "^5.0.0",
     "typescript": "^5.0.4"

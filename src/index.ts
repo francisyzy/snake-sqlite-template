@@ -1,58 +1,30 @@
-import { Message } from "typegram";
-import { Telegraf } from "telegraf";
+import { Snake, shutdown } from "tgsnake";
 
-import config from "./config";
+const client = new Snake();
 
-import { toEscapeHTMLMsg } from "./utils/messageHandler";
-import { printBotInfo } from "./utils/consolePrintUsername";
-
-import bot from "./lib/bot";
-import helper from "./commands/helper";
-import echo from "./commands/echo";
-import catchAll from "./commands/catch-all";
-
-const index = () => {
-  bot.use(Telegraf.log());
-  bot.use((ctx, next) => {
-    if (
-      ctx.message &&
-      config.LOG_GROUP_ID &&
-      ctx.message.from.username != config.OWNER_USERNAME
-    ) {
-      let userInfo: string;
-      if (ctx.message.from.username) {
-        userInfo = `name: <a href="tg://user?id=${
-          ctx.message.from.id
-        }">${toEscapeHTMLMsg(ctx.message.from.first_name)}</a> (@${
-          ctx.message.from.username
-        })`;
-      } else {
-        userInfo = `name: <a href="tg://user?id=${
-          ctx.message.from.id
-        }">${toEscapeHTMLMsg(ctx.message.from.first_name)}</a>`;
-      }
-      const text = `\ntext: ${
-        (ctx.message as Message.TextMessage).text
-      }`;
-      const logMessage = userInfo + toEscapeHTMLMsg(text);
-      bot.telegram.sendMessage(config.LOG_GROUP_ID, logMessage, {
-        parse_mode: "HTML",
-      });
-    }
-    return next();
+async function main() {
+  // Set up message handler
+  client.on('message', async (ctx) => {
+    // This is just to set up the event listener
+    // You can add your message handling logic here if needed
   });
-  bot.launch();
-  printBotInfo(bot);
 
-  helper();
-  echo();
+  // Run the client
+  await client.run();
 
-  //Catch all unknown messages/commands
-  catchAll();
-};
+  // After client.run(), the client should be ready to send messages
+  try {
+    await client.api.sendMessage("@x", "🛡Defend");
+    console.log('Message sent successfully');
+  } catch (error) {
+    console.error('Error sending message:', error);
+  }
+}
 
-index();
+main().catch(console.error);
 
-// Enable graceful stop
-process.once("SIGINT", () => bot.stop("SIGINT"));
-process.once("SIGTERM", () => bot.stop("SIGTERM"));
+// Handle shutdown
+process.on('SIGINT', () => {
+  console.log('Shutting down...');
+  shutdown(client);
+});

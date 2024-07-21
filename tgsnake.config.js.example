@@ -1,0 +1,16 @@
+
+/** @type {import('tgsnake').Options } */
+const config = {
+  apiHash : 'xxx',
+  apiId : 1234,
+  login : {
+        botToken : '',
+        sessionName : 'anything',
+        forceDotSession : true,
+        
+      },
+  logLevel : ['error','info'],
+  clientOptions : {"ipv6":false},
+  plugins : []
+}
+module.exports = config

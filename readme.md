@@ -1,16 +1,14 @@
-# Template-telegram-bot
+# Template-telegram-user-bot
 
 All of the code is written in typescript which is similar to javascript but is type safe. Watch this [Youtube Crash Course](https://www.youtube.com/watch?v=rAy_3SIqT-E) if you are not familiar.
 
 ## Getting started with template
 
-Click [use this template](https://github.com/francisyzy/telegraf-sqlite-template/generate) to create a new Repo for your new telegram bot. _[Find out more on template repos](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/creating-a-repository-from-a-template)_
+Click [use this template](https://github.com/francisyzy/snake-sqlite-template/generate) to create a new Repo for your new telegram bot. _[Find out more on template repos](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/creating-a-repository-from-a-template)_
 
 ### Setup environment
 
-See [`.env.example`](.env.example) for example on how to set up your `.env` file. _Remember to not commit `.env` into version control. [Read more on `.env`](https://12factor.net/config)_
-
-[Set up env variables in heroku (Production)](https://devcenter.heroku.com/articles/config-vars#using-the-heroku-dashboard)
+See [`tgsnake.config.js.example`](tgsnake.config.js.example) for example on how to set up your `tgsnake.config.js` file. _Remember to not commit `tgsnake.config.js` into version control._
 
 #### Nodejs
 
@@ -21,7 +19,6 @@ The main engine the bot runs on is nodeJS. There is a [Youtube Video](https://ww
 #### Database
 
 This bot uses a local database so that you do not have to use a database service. The .db files will keep updating so it will keep updating at the repo side
-
 
 ### Developing
 
@@ -50,14 +47,10 @@ I just run my bots on a linux box somewhere now. Heroku has no more free tier.
 
 ## Resources
 
-### Telegraf
+### TG Snake
 
-- [Github Repo](https://github.com/telegraf/telegraf)
-- [Getting started](https://github.com/telegraf/telegraf#getting-started)
-- [API reference](https://telegraf.js.org/modules.html)
-- [Telegram group for Telegraf](https://t.me/TelegrafJSChat)
-- [GitHub Discussions](https://github.com/telegraf/telegraf/discussions)
-- [Dependent repositories](https://libraries.io/npm/telegraf/dependent_repositories)
+- [Github Repo](https://github.com/tgsnake/tgsnake)
+- [Getting started](https://tgsnake.js.org/en/getting-started)
 
 ### Prisma
 
@@ -77,12 +70,12 @@ The Quickstart is based on a preconfigured SQLite database. You can also get sta
 - [Link Github Repo to Heroku so that it will automatically push the changes made](https://devcenter.heroku.com/articles/github-integration)
 - [Heroku Command Line Tools (CLI)](https://devcenter.heroku.com/articles/heroku-cli)
 - [Get Heroku Logs (1500 lines max)](https://devcenter.heroku.com/articles/logging#log-retrieval-via-cli)
-- [Heroku Config Vars (`.env`)](https://devcenter.heroku.com/articles/config-vars#using-the-heroku-dashboard)
+- [Heroku Config Vars (`tgsnake.config.js`)](https://devcenter.heroku.com/articles/config-vars#using-the-heroku-dashboard)
 </strike>
 
 ## Built with
 
-Telegraf
+tgsnake
 Prisma
 Sqlite
 
